@@ -30,7 +30,7 @@ class OrdersController extends Controller
         // Update the html field
         $page->update(['html' => $request->html]);
 
-        file_put_contents($page->file, $request->html);
+        file_put_contents($request->file, $request->html);
 
         return response()->json(['message' => 'Data saved successfully'], 200);
     }
@@ -47,7 +47,10 @@ class OrdersController extends Controller
 
         $data['html'] = file_get_contents($request->startTemplateUrl);
 
-
+        // Check if the directory exists, if not, create it
+        if (!File::exists($data['folder'])) {
+            File::makeDirectory($data['folder'], 0755, true);
+        }
 
 
 

@@ -3,7 +3,7 @@
 
 
 //search for html files in demo and my-pages folders
-$htmlFiles = glob('{my-pages/*.html,demo/*\/*.html, demo3/*.html}',  GLOB_BRACE);
+$htmlFiles = glob('{themes/*.php}',  GLOB_BRACE);
 $files = '';
 foreach ($htmlFiles as $file) {
    if (in_array($file, array('new-page-blank-template.html', 'editor.html'))) continue;//skip template files
