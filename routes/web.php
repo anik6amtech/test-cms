@@ -21,11 +21,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PageController::class, 'index']);
 Route::get('/pages', [PageController::class, 'pages'])->name('pageBuilder');
 Route::get('pages/all', [PageController::class, 'allPages'])->name('allpages');
-Route::post('save/page', [PageController::class, 'updatePage']);
+Route::post('save/page', [PageController::class, 'updatePage'])->name('savePage');
 Route::post('new/page', [PageController::class, 'createPage'])->name('createPage');
 Route::get('delete/page/{page}', [PageController::class, 'deletePage'])->name('deletePage');
 Route::get('edit/page/{page}', [PageController::class, 'editPage'])->name('editPage');
 Route::get('getPgae/{page}', [PageController::class, 'getPgae'])->name('getPgae');
+Route::get('viewPgae/{page}', [PageController::class, 'viewPgae'])->name('viewPgae');
 
 
 

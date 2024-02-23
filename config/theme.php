@@ -30,6 +30,7 @@ return [
     |
     | The base path where all the themes are located.
     */
+    'base_url' => secure_url('themes/addon'),
     'base_path' => resource_path('views/themes/'),
     'blank_template' => resource_path('views/themes/template.blade.php')
 ];

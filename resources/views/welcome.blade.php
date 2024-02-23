@@ -1,4 +1,6 @@
-
+@php
+ $baseUrl = json_encode((config('theme.base_url')));
+@endphp
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="auto">
   <head>
@@ -1671,7 +1673,7 @@
 <link href="{{asset('vendor/vvveb')}}/libs/media/media.css" rel="stylesheet">
 <script>
 window.mediaPath = '../../media';
-Vvveb.themeBaseUrl = 'themes';
+Vvveb.themeBaseUrl = <?php echo $baseUrl ?>;
 </script>
 <script src="{{asset('vendor/vvveb')}}/libs/media/media.js"></script>
 <script src="{{asset('vendor/vvveb')}}/libs/media/openverse.js"></script>
@@ -1717,24 +1719,6 @@ Vvveb.themeBaseUrl = 'themes';
 <script src="{{asset('vendor/vvveb')}}/libs/builder/plugin-codemirror.js"></script>
 
 
-<!--
-Tinymce plugin
-Clone or copy https://github.com/tinymce/tinymce-dist to libs/tinymce-dist
--->
-<!--
-<script src="{{asset('vendor/vvveb')}}/libs/tinymce-dist/tinymce.min.js"></script>
-<script src="{{asset('vendor/vvveb')}}/libs/builder/plugin-tinymce.js"></script>
--->
-
-<!--
-CKEditor plugin
-Unzip the latest ckeditor release zip from https://github.com/ckeditor/ckeditor4/releases to libs/ckeditor or use the CDN
--->
-<!--
-<script src="{{asset('vendor/vvveb')}}/libs/ckeditor/ckeditor.js"></script> <script src="https://cdn.ckeditor.com/ckeditor5/39.0.2/classic/ckeditor.js"></script>
-<script src="{{asset('vendor/vvveb')}}/libs/builder/plugin-ckeditor.js"></script>
--->
-
 <!-- jszip - download page as zip -->
 <script src="{{asset('vendor/vvveb')}}/libs/jszip/jszip.min.js"></script>
 <script src="{{asset('vendor/vvveb')}}/libs/jszip/filesaver.min.js"></script>
@@ -1746,11 +1730,6 @@ Unzip the latest ckeditor release zip from https://github.com/ckeditor/ckeditor4
 <script src="{{asset('vendor/vvveb')}}/libs/autocomplete/jquery.autocomplete.js"></script>
 
 <script>
-let renameUrl = 'save/page?action=rename';
-let deleteUrl = 'save/page?action=delete';
-let saveReusableUrl = 'save/page?action=saveReusable';
-let oEmbedProxyUrl = 'save/page?action=oembedProxy';
-let chatgptOptions = {"key":"","model":"gpt-3.5-turbo-instruct","temperature":0,"max_tokens":300};
 
 
 $(function() {

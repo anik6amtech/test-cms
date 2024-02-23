@@ -2038,6 +2038,7 @@ Vvveb.Builder = {
 
 	saveAjax: function(data, callback, saveUrl)
 	{
+        console.log(data);
 		if (!data["file"]) {
 			data["file"] = Vvveb.FileManager.getCurrentFileName();
 			//data["file"] = Vvveb.themeBaseUrl + data["file"];
@@ -2227,7 +2228,7 @@ Vvveb.Gui = {
         var csrfToken = $('meta[name="csrf-token"]').attr('content');
 		// $('#textarea-modal textarea').val(Vvveb.Builder.getHtml());
 		// $('#textarea-modal').modal();
-
+        var base_url = window.location.origin;
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': csrfToken
@@ -2246,12 +2247,11 @@ Vvveb.Gui = {
 	saveAjax : function () {
 		let btn = $(this);
 		let saveUrl = this.dataset.vvvebUrl;
+		let pageId = this.dataset.vvvebPageid;
 		let file = Vvveb.FileManager.getPageData('file');
-
 		$(".loading", btn).toggleClass("d-none");
 		$(".button-text", btn).toggleClass("d-none");
-console.log(file);
-		return Vvveb.Builder.saveAjax({file}, null, saveUrl).done(function (data, text) {
+		return Vvveb.Builder.saveAjax({file,pageId}, null, saveUrl).done(function (data, text) {
 			/*
 			//use modal to show save status
 			var messageModal = new bootstrap.Modal(document.getElementById('message-modal'), {

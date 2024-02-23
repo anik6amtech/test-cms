@@ -38,7 +38,7 @@ class PageController extends Controller
     }
     public function updatePage(Request $request)
     {
-        $page = Page::where('file', $request->file)->first();
+        $page = Page::find($request->pageId);
         if (!$page) {
             return response()->json(['error' => 'Page not found'], 404);
         }
@@ -46,7 +46,7 @@ class PageController extends Controller
         // Update the html field
         $page->update(['html' => $request->html]);
 
-        file_put_contents($request->file, $request->html);
+        // file_put_contents($request->file, $request->html);
 
         return response()->json(['message' => 'Data saved successfully'], 200);
     }
@@ -76,7 +76,7 @@ class PageController extends Controller
             file_put_contents($fileLocation, $data['html']);
         }
 
-        return response()->json(['message' => 'Data saved successfully'], 200);
+        return redirect()->back();
     }
 
     public function deletePage(Page $page)
@@ -96,4 +96,6 @@ class PageController extends Controller
 return $page->html;
 
     }
+
+
 }
