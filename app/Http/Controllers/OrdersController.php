@@ -14,54 +14,7 @@ class OrdersController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        $html = view('welcome')->render();
-        return view('index',compact('html'));
-    }
 
-    public function updatePage(Request $request)
-    {
-        $page = Page::where('file',$request->file)->first();
-        if (!$page) {
-            return response()->json(['error' => 'Page not found'], 404);
-        }
-
-        // Update the html field
-        $page->update(['html' => $request->html]);
-
-        file_put_contents($request->file, $request->html);
-
-        return response()->json(['message' => 'Data saved successfully'], 200);
-    }
-    public function createPage(Request $request)
-    {
-        $data = [
-            'startTemplateUrl' => $request['startTemplateUrl'],
-            'title' => $request['title'],
-            'file' => $request['file'],
-            'folder' => $request['folder'],
-            'name' => $request['name'],
-            'url' => $request['url'],
-        ];
-
-        $data['html'] = file_get_contents($request->startTemplateUrl);
-
-        // Check if the directory exists, if not, create it
-        if (!File::exists($data['folder'])) {
-            File::makeDirectory($data['folder'], 0755, true);
-        }
-
-
-
-        $page = Page::create($data);
-
-        if ($page) {
-            file_put_contents($data['file'], $data['html']);
-        }
-
-        return response()->json(['message' => 'Data saved successfully'], 200);
-    }
     public function searchResults(Request $request)
     {
         $searchTerm = $request->input('search');

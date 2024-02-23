@@ -5,16 +5,16 @@
         "dev": "vite",
         "build": "vite build",
         "dev:demo": "vite --config themes/demo/vite.config.js",
-    "build:demo": "vite build --config themes/demo/vite.config.js"
-
+        "build:demo": "vite build --config themes/demo/vite.config.js"
     },
     "devDependencies": {
+        "@popperjs/core": "^2.11.6",
         "axios": "^1.6.4",
-        "bootstrap": "^4.6.0",
+        "bootstrap": "^5.2.3",
         "jquery": "^3.5",
         "laravel-vite-plugin": "^1.0.0",
         "popper.js": "^1.16",
-        "sass": "^1.32.1",
+        "sass": "^1.56.1",
         "sass-loader": "^10.1.1",
         "vite": "^5.0.0"
     }

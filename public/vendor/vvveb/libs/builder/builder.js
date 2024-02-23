@@ -991,7 +991,8 @@ Vvveb.Builder = {
 
 
 	loadUrl : function(url, callback) {
-		var self = this;
+		console.log(url);
+        var self = this;
 		$("#select-box").hide();
 
 		self.initCallback = callback;

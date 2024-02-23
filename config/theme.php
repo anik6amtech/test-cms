@@ -7,9 +7,9 @@ return [
     |--------------------------------------------------------------------------
     |
     | It will assign the default active theme to be used if one is not set during
-    | runtime.
+    | runtime.\
     */
-    'active' => null,
+    'active' => 'astra',
 
     /*
     |--------------------------------------------------------------------------
@@ -30,5 +30,6 @@ return [
     |
     | The base path where all the themes are located.
     */
-    'base_path' => base_path('themes')
+    'base_path' => resource_path('views/themes/'),
+    'blank_template' => resource_path('views/themes/template.blade.php')
 ];

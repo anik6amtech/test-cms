@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\PageController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,10 +18,18 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', [OrdersController::class, 'index']);
-Route::post('save/page', [OrdersController::class, 'updatePage']);
-Route::post('new/page', [OrdersController::class, 'createPage']);
-Route::get('/orders/results', [OrdersController::class, 'searchResults'])->name('orders.search');
+Route::get('/', [PageController::class, 'index']);
+Route::get('/pages', [PageController::class, 'pages'])->name('pageBuilder');
+Route::get('pages/all', [PageController::class, 'allPages'])->name('allpages');
+Route::post('save/page', [PageController::class, 'updatePage']);
+Route::post('new/page', [PageController::class, 'createPage'])->name('createPage');
+Route::get('delete/page/{page}', [PageController::class, 'deletePage'])->name('deletePage');
+Route::get('edit/page/{page}', [PageController::class, 'editPage'])->name('editPage');
+Route::get('getPgae/{page}', [PageController::class, 'getPgae'])->name('getPgae');
+
+
+
+
 
 
 Route::get('/home', function () {
@@ -27,3 +37,7 @@ Route::get('/home', function () {
 })->middleware(['auth'])->name('home');
 
 require __DIR__.'/auth.php';
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
