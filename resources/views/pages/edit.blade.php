@@ -1,6 +1,6 @@
 
 @php
- $pageData = json_encode($page->html);
+ $pageData = json_encode($pageHtml);
  $baseUrl = json_encode((config('theme.base_url')));
 @endphp
 <!DOCTYPE html>
@@ -15,6 +15,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
     <base href="">
+
     <title>VvvebJs</title>
 
     <link href="{{asset('vendor/vvveb')}}/css/editor.css" rel="stylesheet">
@@ -731,6 +732,7 @@
 
 
 						<iframe src="" id="iframe1">
+
 						</iframe>
 					</div>
 
@@ -1666,7 +1668,7 @@ Vvveb.themeBaseUrl = <?php echo $baseUrl ?>;
 -->
 
 <!-- components-->
-<!-- script src="{{asset('vendor/vvveb')}}/libs/builder/components-server.js"></script -->
+<script src="{{asset('vendor/vvveb')}}/libs/builder/components-server.js"></script>
 <script src="{{asset('vendor/vvveb')}}/libs/builder/plugin-google-fonts.js"></script>
 <script src="{{asset('vendor/vvveb')}}/libs/builder/components-common.js"></script>
 <script src="{{asset('vendor/vvveb')}}/libs/builder/components-html.js"></script>

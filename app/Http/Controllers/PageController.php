@@ -31,9 +31,14 @@ class PageController extends Controller
 
     public function editPage(Page $page)
     {
+        $block = $page->html;
+
+    //   return view('pages.page',compact('block'));
+
+        $pageHtml = view('pages.page',compact('block'))->render();
 
         $html = view('welcome')->render();
-           return view('pages.edit', compact('page','html'));
+           return view('pages.edit', compact('page','html','pageHtml'));
 
     }
     public function updatePage(Request $request)
@@ -93,7 +98,11 @@ class PageController extends Controller
     public function getPgae(Page $page)
     {
 
-return $page->html;
+        $block = $page->html;
+
+    //   return view('pages.page',compact('block'));
+
+        return view('pages.page',compact('block'))->render();
 
     }
 

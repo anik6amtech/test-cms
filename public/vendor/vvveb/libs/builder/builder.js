@@ -1080,7 +1080,7 @@ Vvveb.Builder = {
 
 		self.frameDoc = $(window.FrameDocument);
 		self.frameHtml = $(window.FrameDocument).find("html");
-		self.frameBody = $(window.FrameDocument).find("body");
+		self.frameBody = $(window.FrameDocument).find("#editableContent");
 		self.frameHead = $(window.FrameDocument).find("head");
 
 		//insert editor helpers like non editable areas
@@ -1732,7 +1732,7 @@ Vvveb.Builder = {
 		var addSectionElement = {};
 
 		$("#add-section-btn").on("click", function(event) {
-
+console.log('add-section');
 			addSectionElement = self.highlightEl;
 
 			var offset = $(addSectionElement).offset();
@@ -1922,6 +1922,29 @@ Vvveb.Builder = {
 		return html;
 	},
 
+    getBody: function(keepHelperAttributes = true)
+    {
+        var doc = window.FrameDocument;
+
+        // Check if doc is a valid document object
+        if (doc && typeof doc.getElementById === 'function') {
+            // Find the element with id "editableContent" using native JavaScript
+            var editableContentElement = doc.getElementById("editableContent");
+
+            // Check if the element is found before attempting to access its HTML
+            if (editableContentElement) {
+                // Get the HTML content of the element
+                var html = editableContentElement.innerHTML;
+                return html;
+            } else {
+                console.error("Element with id 'editableContent' not found.");
+                return null; // or return an appropriate value indicating failure
+            }
+        } else {
+            console.error("Invalid or missing document object.");
+            return null; // or return an appropriate value indicating failure
+        }
+    },
 	getHtml: function(keepHelperAttributes = true)
 	{
 		var doc = window.FrameDocument;
@@ -1942,7 +1965,6 @@ Vvveb.Builder = {
          + ">\n";
 
          Vvveb.FontsManager.cleanUnusedFonts();
-
          html +=  doc.documentElement.outerHTML;
          html = this.removeHelpers(html, keepHelperAttributes);
 
@@ -2038,16 +2060,14 @@ Vvveb.Builder = {
 
 	saveAjax: function(data, callback, saveUrl)
 	{
-        console.log(data);
 		if (!data["file"]) {
 			data["file"] = Vvveb.FileManager.getCurrentFileName();
 			//data["file"] = Vvveb.themeBaseUrl + data["file"];
 		}
 
-
 		if (!data["startTemplateUrl"])
 		{
-			data["html"] = this.getHtml();
+			data["html"] = this.getBody();
 		}
         var csrfToken = $('meta[name="csrf-token"]').attr('content');
         $.ajaxSetup({
@@ -2918,8 +2938,10 @@ Vvveb.SectionList = {
 			var afterSection = $("> " + sectionType + ":last", Vvveb.Builder.frameBody);
 
 			if (afterSection.length) {
+                console.log(node);
 				afterSection.after(node);
 			} else {
+
 				if (sectionType == "nav") {
 					afterSection = $("> nav:first,> header:first", Vvveb.Builder.frameBody);
 
@@ -2929,6 +2951,8 @@ Vvveb.SectionList = {
 						$(Vvveb.Builder.frameBody).append(node);
 					}
 				} else if (sectionType != "footer") {
+
+
 					afterSection = $("body > footer:last", Vvveb.Builder.frameBody);
 
 					if (afterSection.length) {
