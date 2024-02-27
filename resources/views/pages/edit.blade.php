@@ -1660,6 +1660,7 @@ Vvveb.themeBaseUrl = <?php echo $baseUrl ?>;
 <script src="{{asset('assets/vendor/vvveb')}}/libs/builder/plugin-media.js"></script>
 
 @include('sections')
+// @include('shortcode2')
 <!-- bootstrap colorpicker //uncomment bellow scripts to enable -->
 <!--
 <script src="{{asset('assets/vendor/vvveb')}}/libs/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>

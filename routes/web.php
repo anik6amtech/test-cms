@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [PageController::class, 'index']);
+Route::get('/redirect/{page}', [PageController::class, 'webRoute'])->name('pageBuilder');
 Route::get('/pages', [PageController::class, 'pages'])->name('pageBuilder');
 Route::get('pages/all', [PageController::class, 'allPages'])->name('allpages');
 Route::post('save/page', [PageController::class, 'updatePage'])->name('savePage');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Page;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use TorMorten\Eventy\Facades\Eventy;
 
 class PageController extends Controller
 {
@@ -89,5 +90,12 @@ class PageController extends Controller
 
     }
 
+
+    public function webRoute(Page $page)
+    {
+
+        return view('pages.page',compact('page'))->render();
+
+    }
 
 }

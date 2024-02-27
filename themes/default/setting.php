@@ -1,4 +1,5 @@
 <?php
+use App\Models\Blog;
 
 use TorMorten\Eventy\Facades\Eventy;
 
@@ -35,3 +36,13 @@ Eventy::addAction('web_footer', function() {
     include('views/partials/footer.php');
 
    });
+
+
+
+
+   Eventy::addFilter('web_blogs', function() {
+    ob_start(); // Start output buffering
+    include 'views/shortcode/blogs.php'; // Include the PHP file
+    $content = ob_get_clean(); // Get the buffered content and clean the buffer
+    return $content; // Return the content
+});
