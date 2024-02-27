@@ -30,20 +30,20 @@
                             </div>
 
                             <div class="mb-3 row" data-key="href">
-                                 <label class="col-sm-3 col-form-label">File name</label>
+                                 <label class="col-sm-3 col-form-label">Slug name</label>
                                 <div class="col-sm-9 input">
                                     <div>
-                                        <input name="file_name" type="text" value="" class="form-control" placeholder="ex: index" required="">
+                                        <input name="slug" type="text" value="" class="form-control" placeholder="ex: index" required="">
                                     </div>
                                 </div>
                             </div>
 
 
                             <div class="mb-3 row" data-key="href">
-                                 <label class="col-sm-3 col-form-label">Save to folder</label>
+                                 <label class="col-sm-3 col-form-label">Page Order</label>
                                 <div class="col-sm-9 input">
                                     <div>
-                                        <input name="folder_name" type="text" value="" class="form-control" placeholder="/" required="">
+                                        <input name="order" type="number" value="" class="form-control"  required="">
                                     </div>
                                 </div>
                             </div>
@@ -65,10 +65,9 @@
                         <thead>
                           <tr>
                             <th scope="col">#id</th>
-                            <th scope="col">theme_name</th>
+                            <th scope="col">order</th>
                             <th scope="col">page_title</th>
-                            <th scope="col">folder_name</th>
-                            <th scope="col">File Name</th>
+                            <th scope="col">slug</th>
                             <th scope="col">action</th>
                           </tr>
                         </thead>
@@ -78,13 +77,12 @@
 
                             <tr>
                                 <th scope="row">{{$page->id}}</th>
-                                <td>{{$page->theme_name}}</td>
+                                <td>{{$page->order}}</td>
                                 <td>{{$page->page_title}}</td>
-                                <td>{{$page->folder_name}}</td>
-                                <td>{{$page->file_name}}</td>
+                                <td>{{$page->slug}}</td>
 
-                                <td><a href="{{route('deletePage',$page->id)}}" class="btn btn-danger">&times;</a></td>
-                                <td><a href="{{route('editPage',$page->id)}}" class="btn btn-info">edit</a></td>
+                                <td><a href="{{route('deletePage',$page->id)}}" class="btn btn-danger">&times;</a><a href="{{route('editPage',$page->id)}}" class="btn btn-info">edit</a></td>
+                                <td></td>
 
                               </tr>
                             @endforeach

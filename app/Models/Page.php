@@ -10,8 +10,8 @@ class Page extends Model
     use HasFactory;
 
     protected $fillable = [
-        'theme_name',
-        'file_name',
+        'order',
+        'slug',
         'page_title',
         'folder_name',
         'html',

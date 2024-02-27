@@ -10,11 +10,9 @@ class PageController extends Controller
 {
     public function index()
     {
-        $view = 'themes.'.config('theme.active').'.index';
-        return view($view);
-        // $location = config('theme.base_path');
-        // $activetheme = config('theme.active');
-        // return redirect($location . '/' . $activetheme . '/');
+        $page = Page::where('slug','home')->first();
+// dd($page);
+        return view('pages.page',compact('page'));
     }
     public function pages()
     {
@@ -31,14 +29,11 @@ class PageController extends Controller
 
     public function editPage(Page $page)
     {
-        $block = $page->html;
 
-    //   return view('pages.page',compact('block'));
 
-        $pageHtml = view('pages.page',compact('block'))->render();
 
-        $html = view('welcome')->render();
-           return view('pages.edit', compact('page','html','pageHtml'));
+        $pageHtml = view('pages.page',compact('page'))->render();
+           return view('pages.edit', compact('page','pageHtml'));
 
     }
     public function updatePage(Request $request)
@@ -58,28 +53,18 @@ class PageController extends Controller
     public function createPage(Request $request)
     {
         $data = [
-            'theme_name' => config('theme.active'),
-            'file_name' => $request['file_name'] . '.blade.php',
             'page_title' => $request['page_title'],
-            'folder_name' => config('theme.active') . $request['folder_name'],
+            'slug' => $request['slug'],
+            'order' => $request['order'],
         ];
 
-        $data['html'] = file_get_contents(config('theme.blank_template'));
+        $data['html'] = config('theme.blank_template');
 
-        $folderLocation =  config('theme.base_path').$data['theme_name'];
-        $fileLocation =  config('theme.base_path').$data['theme_name'] . '/' . $data['file_name'];
-        // Check if the directory exists, if not, create it
-        if (!File::exists($folderLocation)) {
-            File::makeDirectory($folderLocation, 0755, true);
-        }
 
 
 
         $page = Page::create($data);
 
-        if ($page) {
-            file_put_contents($fileLocation, $data['html']);
-        }
 
         return redirect()->back();
     }
@@ -98,11 +83,9 @@ class PageController extends Controller
     public function getPgae(Page $page)
     {
 
-        $block = $page->html;
 
-    //   return view('pages.page',compact('block'));
 
-        return view('pages.page',compact('block'))->render();
+        return view('pages.page',compact('page'))->render();
 
     }
 

@@ -159,10 +159,12 @@ return [
         /*
          * Package Service Providers...
          */
-
+        'TorMorten\Eventy\EventServiceProvider',
+        'TorMorten\Eventy\EventBladeServiceProvider',
         /*
          * Application Service Providers...
          */
+        App\Providers\ThemeServiceProvider::class,
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
@@ -182,6 +184,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+        'Eventy' => TorMorten\Eventy\Facades\Events::class,
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 

@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
-            $table->string('theme_name');
-            $table->string('file_name');
+            $table->string('order');
+            $table->string('slug');
             $table->string('page_title');
-            $table->string('folder_name');
             $table->longText('html');
             $table->timestamps();
         });

@@ -9,7 +9,8 @@ return [
     | It will assign the default active theme to be used if one is not set during
     | runtime.\
     */
-    'active' => 'astra',
+    'active' => 'default',
+    'page' => 'home',
 
     /*
     |--------------------------------------------------------------------------
@@ -30,7 +31,11 @@ return [
     |
     | The base path where all the themes are located.
     */
-    'base_url' => secure_url('themes/addon'),
+    'base_url' => public_path('themes/addon'),
     'base_path' => resource_path('views/themes/'),
-    'blank_template' => resource_path('views/themes/template.blade.php')
+    'blank_template' => '<section class="text-center">
+
+            <h4 class="mb-0">Blank Template</h4>
+
+  </section>'
 ];

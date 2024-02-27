@@ -18,7 +18,7 @@
 
     <title>VvvebJs</title>
 
-    <link href="{{asset('vendor/vvveb')}}/css/editor.css" rel="stylesheet">
+    <link href="{{asset('assets/vendor/vvveb')}}/css/editor.css" rel="stylesheet">
   </head>
 <body>
 
@@ -28,15 +28,15 @@
 
 					<div class="btn-group float-start" role="group">
 					  <button class="btn btn-light" title="Toggle file manager" id="toggle-file-manager-btn" data-vvveb-action="toggleFileManager" data-bs-toggle="button" aria-pressed="false">
-						  <img src="{{asset('vendor/vvveb')}}/libs/builder/icons/file-manager-layout.svg" width="20" height="20" alt="" role="presentation">
+						  <img src="{{asset('assets/vendor/vvveb')}}/libs/builder/icons/file-manager-layout.svg" width="20" height="20" alt="" role="presentation">
 					  </button>
 
 					  <button class="btn btn-light" title="Toggle left column" id="toggle-left-column-btn" data-vvveb-action="toggleLeftColumn" data-bs-toggle="button" aria-pressed="false">
-						  <img src="{{asset('vendor/vvveb')}}/libs/builder/icons/left-column-layout.svg" width="20" height="20" alt="" role="presentation">
+						  <img src="{{asset('assets/vendor/vvveb')}}/libs/builder/icons/left-column-layout.svg" width="20" height="20" alt="" role="presentation">
 					  </button>
 
 					  <button class="btn btn-light" title="Toggle right column" id="toggle-right-column-btn" data-vvveb-action="toggleRightColumn" data-bs-toggle="button" aria-pressed="false">
-						  <img src="{{asset('vendor/vvveb')}}/libs/builder/icons/right-column-layout.svg" width="20" height="20" alt="" role="presentation">
+						  <img src="{{asset('assets/vendor/vvveb')}}/libs/builder/icons/right-column-layout.svg" width="20" height="20" alt="" role="presentation">
 					  </button>
 					</div>
 
@@ -1634,80 +1634,80 @@
 </div>
 
 <!-- jquery-->
-<script src="{{asset('vendor/vvveb')}}/js/jquery.min.js"></script>
-<script src="{{asset('vendor/vvveb')}}/js/jquery.hotkeys.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/js/jquery.min.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/js/jquery.hotkeys.js"></script>
 
 <!-- bootstrap-->
-<script src="{{asset('vendor/vvveb')}}/js/popper.min.js"></script>
-<script src="{{asset('vendor/vvveb')}}/js/bootstrap.min.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/js/popper.min.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/js/bootstrap.min.js"></script>
 
 <!-- builder code-->
-<script src="{{asset('vendor/vvveb')}}/libs/builder/builder.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/builder/builder.js"></script>
 <!-- undo manager-->
-<script src="{{asset('vendor/vvveb')}}/libs/builder/undo.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/builder/undo.js"></script>
 <!-- inputs-->
-<script src="{{asset('vendor/vvveb')}}/libs/builder/inputs.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/builder/inputs.js"></script>
 
 
 <!-- media gallery -->
-<link href="{{asset('vendor/vvveb')}}/libs/media/media.css" rel="stylesheet">
+<link href="{{asset('assets/vendor/vvveb')}}/libs/media/media.css" rel="stylesheet">
 <script>
 window.mediaPath = '../../media';
 Vvveb.themeBaseUrl = <?php echo $baseUrl ?>;
 </script>
-<script src="{{asset('vendor/vvveb')}}/libs/media/media.js"></script>
-<script src="{{asset('vendor/vvveb')}}/libs/media/openverse.js"></script>
-<script src="{{asset('vendor/vvveb')}}/libs/builder/plugin-media.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/media/media.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/media/openverse.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/builder/plugin-media.js"></script>
 
 @include('sections')
 <!-- bootstrap colorpicker //uncomment bellow scripts to enable -->
 <!--
-<script src="{{asset('vendor/vvveb')}}/libs/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
-<link href="{{asset('vendor/vvveb')}}/libs/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
-<script src="{{asset('vendor/vvveb')}}/libs/builder/plugin-bootstrap-colorpicker.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+<link href="{{asset('assets/vendor/vvveb')}}/libs/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+<script src="{{asset('assets/vendor/vvveb')}}/libs/builder/plugin-bootstrap-colorpicker.js"></script>
 -->
 
 <!-- components-->
-<script src="{{asset('vendor/vvveb')}}/libs/builder/components-server.js"></script>
-<script src="{{asset('vendor/vvveb')}}/libs/builder/plugin-google-fonts.js"></script>
-<script src="{{asset('vendor/vvveb')}}/libs/builder/components-common.js"></script>
-<script src="{{asset('vendor/vvveb')}}/libs/builder/components-html.js"></script>
-<script src="{{asset('vendor/vvveb')}}/libs/builder/plugin-aos.js"></script>
-<script src="{{asset('vendor/vvveb')}}/libs/builder/components-elements.js"></script>
-<script src="{{asset('vendor/vvveb')}}/libs/builder/section.js"></script>
-<script src="{{asset('vendor/vvveb')}}/libs/builder/components-bootstrap5.js"></script>
-<script src="{{asset('vendor/vvveb')}}/libs/builder/components-widgets.js"></script>
-<script src="{{asset('vendor/vvveb')}}/libs/builder/oembed.js"></script>
-<script src="{{asset('vendor/vvveb')}}/libs/builder/components-embeds.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/builder/components-server.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/builder/plugin-google-fonts.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/builder/components-common.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/builder/components-html.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/builder/plugin-aos.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/builder/components-elements.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/builder/section.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/builder/components-bootstrap5.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/builder/components-widgets.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/builder/oembed.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/builder/components-embeds.js"></script>
 
 
 <!-- sections-->
-<script src="{{asset('vendor/vvveb')}}/demo/landing/sections/sections.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/demo/landing/sections/sections.js"></script>
 
 
 <!-- blocks-->
-<script src="{{asset('vendor/vvveb')}}/libs/builder/blocks-bootstrap4.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/builder/blocks-bootstrap4.js"></script>
 
 <!-- plugins -->
 
 <!-- code mirror - code editor syntax highlight -->
-<link href="{{asset('vendor/vvveb')}}/libs/codemirror/lib/codemirror.css" rel="stylesheet"/>
-<link href="{{asset('vendor/vvveb')}}/libs/codemirror/theme/material.css" rel="stylesheet"/>
-<script src="{{asset('vendor/vvveb')}}/libs/codemirror/lib/codemirror.js"></script>
-<script src="{{asset('vendor/vvveb')}}/libs/codemirror/lib/xml.js"></script>
-<script src="{{asset('vendor/vvveb')}}/libs/codemirror/lib/formatting.js"></script>
-<script src="{{asset('vendor/vvveb')}}/libs/builder/plugin-codemirror.js"></script>
+<link href="{{asset('assets/vendor/vvveb')}}/libs/codemirror/lib/codemirror.css" rel="stylesheet"/>
+<link href="{{asset('assets/vendor/vvveb')}}/libs/codemirror/theme/material.css" rel="stylesheet"/>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/codemirror/lib/codemirror.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/codemirror/lib/xml.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/codemirror/lib/formatting.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/builder/plugin-codemirror.js"></script>
 
 
 <!-- jszip - download page as zip -->
-<script src="{{asset('vendor/vvveb')}}/libs/jszip/jszip.min.js"></script>
-<script src="{{asset('vendor/vvveb')}}/libs/jszip/filesaver.min.js"></script>
-<script src="{{asset('vendor/vvveb')}}/libs/builder/plugin-jszip.js"></script>
-<script src="{{asset('vendor/vvveb')}}/libs/builder/plugin-ai-assistant.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/jszip/jszip.min.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/jszip/filesaver.min.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/builder/plugin-jszip.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/builder/plugin-ai-assistant.js"></script>
 
 
 <!-- autocomplete plugin used by autocomplete input-->
-<script src="{{asset('vendor/vvveb')}}/libs/autocomplete/jquery.autocomplete.js"></script>
+<script src="{{asset('assets/vendor/vvveb')}}/libs/autocomplete/jquery.autocomplete.js"></script>
 
 <script>
 let pageData = <?php echo $pageData ?>;

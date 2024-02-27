@@ -16,6 +16,7 @@
         "qirolab/laravel-themer": "^2.1",
         "teamtnt/laravel-scout-tntsearch-driver": "^13.2",
         "teamtnt/tntsearch": "*",
+        "tormjens/eventy": "^0.9.3",
         "typesense/typesense-php": "^4.9"
     },
     "require-dev": {
